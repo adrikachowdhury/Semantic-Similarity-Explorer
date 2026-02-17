@@ -2,7 +2,7 @@
 
 **Project Type:** NLP Foundations / Linear Algebra
 
-**Live Demo:** [https://semantic-similarity.streamlit.app/]
+**Live Demo:** [Semantic Simlarity Explorer](https://semantic-similarity.streamlit.app/)
 
 ---
 
