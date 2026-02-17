@@ -55,6 +55,8 @@ streamlit run semantic-similarity-app.py
 
 4. Open the local URL in your browser to interact with the app.
 
+5. Optional- If you want to test this out on Google Colab, then try with `colab-version.py`
+
 ##🔍 Usage
 
 - View the list of documents
