@@ -57,9 +57,9 @@ streamlit run semantic-similarity-app.py
 
 4. Open the local URL in your browser to interact with the app.
 
-5. Optional- If you want to test this out on a notebook like the Google Colab, then try with `colab-version.ipynb`
+5. Optional- If you want to test this out on a notebook like the Google Colab, then try with `colab-version.ipynb`. N.B.- this notebook only contains the core analysis of the given documents (no user query input is present)
 
-##🔍 Usage
+## 🔍 Usage
 
 - View the list of documents given (you can modify them on your own)
 - See vocabulary and document vectors
@@ -68,7 +68,7 @@ streamlit run semantic-similarity-app.py
 - Visualize documents and user queries in 2D PCA space
 - Plus point: Look into the thorough documentation of the code to understand each critical segment of it
 
-##📈 Learning Outcomes
+## 📈 Learning Outcomes
 
 This project demonstrates:
 
