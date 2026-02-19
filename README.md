@@ -4,7 +4,7 @@
 
 Live Demo: [Semantic Simlarity Explorer](https://semantic-similarity.streamlit.app/)
 
-<img src="https://github.com/user-attachments/assets/demo.gif" alt="Demo GIF" width="900"/>
+![App Demo](assets/demo.gif)
 
 ---
 
