@@ -6,20 +6,14 @@ import matplotlib.pyplot as plt #To draw the scatter plot
 
 st.title("📄 Document Similarity Explorer")
 
-"""
-In Streamlit, we use st.title(), which is 
-similar to Python's print() function
-"""
+# In Streamlit, we use st.title(), which is similar to Python's print() function
 
 # -----------------------------
 # Step 1: Define Documents
 # -----------------------------
 
 #Python list
-"""
-These are sample documents. You can modify
-by adding any documents of your own
-"""
+# These are sample documents. You can modify by adding any documents of your own
 documents = [
     "Climate change affects global temperature.",
     "Global warming impacts weather patterns.",
@@ -38,9 +32,7 @@ for i, doc in enumerate(documents):
 # Step 2: Vectorization
 # -----------------------------
 
-"""
-fit.transform()- learn vocab + converts docs into matrix
-"""
+# fit.transform()- learn vocab + converts docs into matrix
 vectorizer = CountVectorizer()
 X = vectorizer.fit_transform(documents)
 X = X.toarray() #(number_of_docs, vocabulary_size)
@@ -61,12 +53,10 @@ similarity_matrix = np.dot(X, X.T) #result- each cell (i,j) = dot product betwee
 st.subheader("🔁 Raw Dot Product Similarity Matrix")
 st.write(similarity_matrix) #Streamlit automatically formats NumPy arrays nicely
 
-"""
-We compute the vector length for each document. If X shape = (5, V),
-then axis=1 → compute row-wise. So we get 5 norms.
-Without keepdims=True, shape would be (5,)
-With keepdims=True → (5, 1)
-"""
+# We compute the vector length for each document. If X shape = (5, V),
+# then axis=1 → compute row-wise. So we get 5 norms.
+# Without keepdims=True, shape would be (5,)
+# With keepdims=True → (5, 1)
 norms = np.linalg.norm(X, axis=1, keepdims=True)
 X_normalized = X / norms #broadcasting in action. Each document vector now has length = 1
 cosine_similarity = np.dot(X_normalized, X_normalized.T) #Dot product of normalized vectors = cosine similarity
@@ -82,21 +72,16 @@ st.write(cosine_similarity)
 st.subheader("🔍 Search Query")
 query = st.text_input("Enter a search query:")
 
-#Only run search logic if user actually typed something
+#Only run search logic if the user actually typed something
 if query:
 
-    """
-    We don't use fit.transform() here, because we
-    must use the SAME vocab learned earlier.
+    # We don't use fit.transform() here, because we
+    # must use the SAME vocab learned earlier.
 
-    transform() ensures same feature space
-    """
+    # transform() ensures the same feature space
     query_vec = vectorizer.transform([query]).toarray()
 
-    """
-    If query contains no known vocabulary
-    words, the vector becomes all zeros
-    """
+    # If query contains no known vocabulary words, the vector becomes all zeros
     if np.linalg.norm(query_vec) == 0:
         st.warning("Query contains words not in vocabulary.")
     else:
@@ -144,3 +129,4 @@ if query and np.linalg.norm(query_vec) != 0:
 
 else:
     st.info("Enter a valid query to visualize its position in vector space.")
+
