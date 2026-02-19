@@ -15,9 +15,9 @@ This project demonstrates a **document similarity engine built from scratch usin
   - **Dot Product**
   - **Cosine Similarity**
 - Provides **interactive query search**
-- Visualizes document vectors in 2D using **PCA**
+- Visualizes document alongside user query vectors in 2D using **Principal Component Analysis (PCA)**
 
-This showcases foundational skills required for NLP, embeddings, and retrieval-based GenAI systems.
+This showcases foundational skills required for NLP, embeddings, and retrieval-based Generative AI systems.
 
 ---
 
@@ -27,7 +27,7 @@ This showcases foundational skills required for NLP, embeddings, and retrieval-b
 - **Matrix multiplication for similarity computation**
 - **Normalization**
 - **Cosine similarity**
-- **Principal Component Analysis (PCA) for visualization**
+- **PCA for visualization**
 - **Interactive web deployment using Streamlit**
 
 ---
@@ -55,15 +55,16 @@ streamlit run semantic-similarity-app.py
 
 4. Open the local URL in your browser to interact with the app.
 
-5. Optional- If you want to test this out on Google Colab, then try with `colab-version.py`
+5. Optional- If you want to test this out on a notebook like the Google Colab, then try with `colab-version.ipynb`
 
 ##🔍 Usage
 
-- View the list of documents
+- View the list of documents given (you can modify them on your own)
 - See vocabulary and document vectors
 - Explore dot product and cosine similarity
 - Enter your own query to see ranked results
-- Visualize documents in 2D PCA space
+- Visualize documents and user queries in 2D PCA space
+- Plus point: Look into the thorough documentation of the code to understand each critical segment of it
 
 ##📈 Learning Outcomes
 
