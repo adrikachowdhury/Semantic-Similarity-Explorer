@@ -58,6 +58,10 @@ st.write(similarity_matrix) #Streamlit automatically formats NumPy arrays nicely
 # Without keepdims=True, shape would be (5,)
 # With keepdims=True → (5, 1)
 norms = np.linalg.norm(X, axis=1, keepdims=True)
+
+# X = (5, 20)
+# norm = (5, 1) - Each document gets exactly one norm value
+# Broadcasting (virtually expanding)- NumPy feature that performs math operations on arrays of different shapes
 X_normalized = X / norms #broadcasting in action. Each document vector now has length = 1
 cosine_similarity = np.dot(X_normalized, X_normalized.T) #Dot product of normalized vectors = cosine similarity
 
@@ -148,3 +152,4 @@ if query and np.linalg.norm(query_vec) != 0:
 # otherwise dividing by 0 would cause issues
 else:
     st.info("Enter a valid query to visualize its position in vector space.")
+
