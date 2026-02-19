@@ -76,3 +76,7 @@ This project demonstrates:
 - Understanding vector spaces and similarity measures
 - Building interactive data-driven applications
 - Preparing for embedding-based and transformer-based NLP systems
+
+## 💫 Credits
+Feel free to explore the documentation, and please give **credit to the owner** when using content from this repo! 
+Many thanks!🙌
