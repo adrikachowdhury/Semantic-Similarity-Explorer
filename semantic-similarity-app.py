@@ -96,25 +96,42 @@ if query:
 # -----------------------------------------------------
 # Step 5: Dynamic PCA Visualization (Documents + Query)
 # -----------------------------------------------------
+# to show where the query lies geometrically
 
 st.subheader("📉 2D Visualization (Documents + User Query)")
 
+# checks if the user entered a query and if the query contains words that are present in the vocab
 if query and np.linalg.norm(query_vec) != 0:
     
     # Combine documents and query into one matrix
     combined = np.vstack([X, query_vec])
+    # matrix with vstack (vertical stacking):
+    # Doc0
+    # Doc1
+    # Doc2
+    # Doc3
+    # Doc4
+    # Query
 
-    # Apply PCA on combined matrix
+    # Because PCA must see ALL vectors together to project them consistently into 2D
+    # If we applied PCA separately to the query, it would not align correctly
+
+    # Apply PCA on the combined matrix
     pca = PCA(n_components=2)
-    combined_2d = pca.fit_transform(combined)
+    combined_2d = pca.fit_transform(combined) #transforms into 2D marix
 
     # Split back
-    docs_2d = combined_2d[:-1]
-    query_2d = combined_2d[-1]
+    docs_2d = combined_2d[:-1] # All rows except last → documents
+    query_2d = combined_2d[-1] # Last row → query
 
+    #We don’t use plt.show() in Streamlit. Instead, we pass the figure to st.pyplot()
+
+    # fig → the whole figure (the container)
+    # ax → the graph inside it (where points are drawn)
     fig, ax = plt.subplots()
 
     # Plot documents
+    # [:,0]" taking all rows with 0th column- abscisa
     ax.scatter(docs_2d[:,0], docs_2d[:,1])
     
     for i in range(len(documents)):
@@ -127,6 +144,7 @@ if query and np.linalg.norm(query_vec) != 0:
     ax.set_title("Document Space with Query (PCA Projection)")
     st.pyplot(fig)
 
+# If the query contains completely new words, its vector becomes [0, 0, 0, 0, 0, ...]
+# otherwise dividing by 0 would cause issues
 else:
     st.info("Enter a valid query to visualize its position in vector space.")
-
