@@ -91,7 +91,7 @@ if query:
 
         st.subheader("📌 Ranked Results")
         for idx in ranked_indices:
-            st.write(f"Score: {similarities[idx]:.3f} | {documents[idx]}")
+            st.write(f"Score: {similarities[idx]:.3f} | Document {i}: {documents[idx]}")
 
 # -----------------------------------------------------
 # Step 5: Dynamic PCA Visualization (Documents + Query)
@@ -129,4 +129,3 @@ if query and np.linalg.norm(query_vec) != 0:
 
 else:
     st.info("Enter a valid query to visualize its position in vector space.")
-
