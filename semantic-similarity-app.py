@@ -91,7 +91,7 @@ if query:
 
         st.subheader("📌 Ranked Results")
         for idx in ranked_indices:
-            st.write(f"Score: {similarities[idx]:.3f} | Document {i}: {documents[idx]}")
+            st.write(f"Score: {similarities[idx]:.3f} | Document {idx}: {documents[idx]}")
 
 # -----------------------------------------------------
 # Step 5: Dynamic PCA Visualization (Documents + Query)
