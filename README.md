@@ -39,8 +39,8 @@ This showcases foundational skills required for NLP, embeddings, and retrieval-b
 1. Clone the repo:
 
 ```bash
-git clone https://github.com/<username>/semantic-similarity-explorer.git
-cd semantic-similarity-explorer
+git clone https://github.com/adrikachowdhury/Semantic-Similarity-Explorer.git
+cd Semantic-Similarity-Explorer
 ```
 
 2. Install dependencies:
